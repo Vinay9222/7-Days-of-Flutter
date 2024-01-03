@@ -115,18 +115,9 @@ class _LoginPageState extends State<LoginPage> {
                                           fontWeight: FontWeight.bold,
                                           fontSize: 18),
                                     ),
-                              // decoration: BoxDecoration(
-                              //     color: Colors.deepPurple,
-                              //     borderRadius: BorderRadius.circular(8)),
                             ),
                           ),
                         )
-                        // ElevatedButton(
-                        //   child: Text("Login"),
-                        //   style: TextButton.styleFrom(minimumSize: Size(150, 40)),
-                        //   onPressed: () {
-                        //   },
-                        // )
                       ],
                     ))
               ],
