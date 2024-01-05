@@ -1,5 +1,3 @@
-// import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:stock/utils/routes.dart';
 
@@ -96,7 +94,6 @@ class _LoginPageState extends State<LoginPage> {
                         Material(
                           color: Colors.deepPurple,
                           child: InkWell(
-                            // splashColor: Colors.red,
                             onTap: () => moveToHome(context),
                             child: AnimatedContainer(
                               duration: Duration(seconds: 1),
