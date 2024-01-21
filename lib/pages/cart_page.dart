@@ -12,8 +12,7 @@ class CartPage extends StatelessWidget {
         title: "Cart".text.make(),
       ),
       body: Column(children: [
-        _CartList().p32(),
-        expand(),
+        _CartList().p32().expand(),
         Divider(),
         _CardTotal(),
       ]),
@@ -32,7 +31,10 @@ class _CardTotal extends StatelessWidget {
         "\$9999".text.xl5.color(context.theme.accentColor).make(),
         30.widthBox,
         TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: "Buy not supported yet.".text.make()));
+                },
                 style: ButtonStyle(
                     backgroundColor:
                         MaterialStateProperty.all(context.theme.buttonColor)),
