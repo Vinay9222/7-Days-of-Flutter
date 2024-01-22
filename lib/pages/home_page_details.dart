@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
-import '../widgets/themes.dart';
 import '../model/catalog.dart';
+import '../widgets/home_widget/add_to_cart.dart';
 
 class HomeDetailPage extends StatelessWidget {
   final Item catalog;
@@ -12,9 +12,7 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-      ),
+      appBar: AppBar(backgroundColor: Colors.transparent),
       backgroundColor: context.canvasColor,
       bottomNavigationBar: Container(
         color: context.cardColor,
@@ -23,16 +21,9 @@ class HomeDetailPage extends StatelessWidget {
           buttonPadding: EdgeInsets.zero,
           children: [
             "\$${catalog.price}".text.bold.xl4.red800.make(),
-            ElevatedButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                    context.theme.buttonColor,
-                  ),
-                  shape: MaterialStateProperty.all(
-                    StadiumBorder(),
-                  )),
-              child: "Add to Cart".text.make(),
+            AddToCart(
+              catalog: catalog,
+              key: UniqueKey(),
             ).wh(120, 50)
           ],
         ).p32(),
@@ -61,7 +52,7 @@ class HomeDetailPage extends StatelessWidget {
                         .make(),
                     catalog.desc.text.textStyle(context.captionStyle).xl.make(),
                     10.heightBox,
-                    "Dolor ssea slkjdcjniawek asijdfls nawjepoicklkxnf awiwjeofsldk foiajwsdfmxnvl kajeidofslkajsd;f jasxnpweoijfj ejwf jp weflkjs wje fldk weijpfsdeqwpoijfkvn aoww eijfflk jefdla kwejir ksdz.x,m;iejdf ;keqjrfsd l;koewjdflkqije kjoj"
+                    "Dolor sea takimata ipsum sea eirmod aliquyam est. Eos ipsum voluptua eirmod elitr, no dolor dolor amet eirmod dolor labore dolores magna. Amet vero vero vero kasd, dolore sea sed sit invidunt nonumy est sit clita. Diam aliquyam amet tempor diam no aliquyam invidunt. Elitr lorem eirmod dolore clita. Rebum."
                         .text
                         .textStyle(context.captionStyle)
                         .make()

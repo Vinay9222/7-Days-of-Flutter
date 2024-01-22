@@ -1,3 +1,4 @@
 {
-    "cmake.sourceDirectory": "C:/Users/vinay/Desktop/Project_Stock/Stocks/stock/linux"
+    "cmake.sourceDirectory": "C:/Users/vinay/Desktop/Project_Stock/Stocks/stock/linux",
+    "C_Cpp.errorSquiggles": "disabled"
 }

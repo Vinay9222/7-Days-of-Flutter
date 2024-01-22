@@ -9,17 +9,14 @@ class MyTheme {
       buttonColor: darkBluishColor,
       accentColor: darkBluishColor,
       appBarTheme: AppBarTheme(
-        color: Colors.deepPurple,
+        color: Colors.white,
         elevation: 0.0,
         iconTheme: IconThemeData(color: Colors.black),
-        textTheme: Theme.of(context).textTheme.copyWith(
-            headline6:
-                context.textTheme.headline6!.copyWith(color: Colors.black)),
+        textTheme: Theme.of(context).textTheme,
       ));
 
   static ThemeData darkTheme(BuildContext context) => ThemeData(
       brightness: Brightness.dark,
-      primarySwatch: Colors.deepPurple,
       cardColor: Colors.black,
       canvasColor: darkCreamColor,
       buttonColor: lightBluishColor,
@@ -28,7 +25,10 @@ class MyTheme {
         color: Colors.black,
         elevation: 0.0,
         iconTheme: IconThemeData(color: Colors.white),
-        textTheme: Theme.of(context).textTheme,
+        textTheme: Theme.of(context).textTheme.copyWith(
+              headline6:
+                  context.textTheme.headline6?.copyWith(color: Colors.white),
+            ),
       ));
 
   //Colors

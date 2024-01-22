@@ -3,10 +3,12 @@ import 'dart:convert';
 class CatalogModel {
   static List<Item> items = [];
 
-  static Item getById(int id) =>
+  // Get Item by ID
+  Item getById(int id) =>
       items.firstWhere((element) => element.id == id, orElse: null);
 
-  static Item getByPosition(int pos) => items[pos];
+  // Get Item by position
+  Item getByPosition(int pos) => items[pos];
 }
 
 class Item {
@@ -17,13 +19,15 @@ class Item {
   final String color;
   final String image;
 
-  Item(
-      {required this.id,
-      required this.name,
-      required this.desc,
-      required this.price,
-      required this.color,
-      required this.image});
+  Item({
+    required this.id,
+    required this.name,
+    required this.desc,
+    required this.price,
+    required this.color,
+    required this.image,
+  });
+
   Item copyWith({
     required int id,
     required String name,
@@ -54,9 +58,8 @@ class Item {
   }
 
   factory Item.fromMap(Map<String, dynamic> map) {
-    // ignore: unnecessary_null_comparison
     if (map == null) {
-      throw FormatException("Invalid map provided for Item");
+      throw ArgumentError('Missing required fields in map');
     }
 
     return Item(

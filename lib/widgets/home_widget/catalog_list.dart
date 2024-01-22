@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:stock/widgets/home_widget/catalog_image.dart';
 import 'package:velocity_x/velocity_x.dart';
 import '../../model/catalog.dart';
 import '../../pages/home_page_details.dart';
-import '../themes.dart';
+import 'add_to_cart.dart';
+import 'catalog_image.dart';
 
 class CatalogList extends StatelessWidget {
   @override
@@ -12,14 +12,12 @@ class CatalogList extends StatelessWidget {
       shrinkWrap: true,
       itemCount: CatalogModel.items.length,
       itemBuilder: (context, index) {
-        final catalog = CatalogModel.getByPosition(index);
+        final catalog = CatalogModel.items[index];
         return InkWell(
           onTap: () => Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => HomeDetailPage(
-                catalog: catalog,
-              ),
+              builder: (context) => HomeDetailPage(catalog: catalog),
             ),
           ),
           child: CatalogItem(catalog: catalog),
@@ -59,17 +57,11 @@ class CatalogItem extends StatelessWidget {
                 alignment: MainAxisAlignment.spaceBetween,
                 buttonPadding: EdgeInsets.zero,
                 children: [
-                  "\$${catalog.price}".text.bold.xl.make().wh(100, 20),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(
-                            context.theme.buttonColor),
-                        shape: MaterialStateProperty.all(
-                          StadiumBorder(),
-                        )),
-                    child: "Add to Cart".text.make(),
-                  ).wh(120, 40)
+                  "\$${catalog.price}".text.bold.xl.make(),
+                  AddToCart(
+                    catalog: catalog,
+                    key: UniqueKey(),
+                  )
                 ],
               ).pOnly(right: 8.0)
             ],
