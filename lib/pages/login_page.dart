@@ -92,7 +92,7 @@ class _LoginPageState extends State<LoginPage> {
                           height: 50,
                         ),
                         Material(
-                          color: context.theme.buttonColor,
+                          // color: context.theme.buttonColor,
                           child: InkWell(
                             onTap: () => moveToHome(context),
                             child: AnimatedContainer(
