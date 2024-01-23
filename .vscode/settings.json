@@ -1,4 +1,6 @@
 {
     "cmake.sourceDirectory": "C:/Users/vinay/Desktop/Project_Stock/Stocks/stock/linux",
-    "C_Cpp.errorSquiggles": "disabled"
+    "C_Cpp.errorSquiggles": "disabled",
+    "emulator.emulatorPath": "C:\\Users\\vinay\\AppData\\Local\\Android\\Sdk\\emulator",
+    "emulator.emulatorPathWindows": "C:\\Users\\vinay\\AppData\\Local\\Android\\Sdk\\emulator"
 }
